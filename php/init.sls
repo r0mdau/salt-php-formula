@@ -8,6 +8,6 @@ php_sury_repository:
 
 php_packages:
   pkg.installed:
-    - pkgs: "{{ pillar.get('php_packages', default=['htop']) }}"
+    - pkgs: "{{ pillar.get('php_packages') | default('htop') }}"
     - require:
       - pkgrepo: php_sury_repository
